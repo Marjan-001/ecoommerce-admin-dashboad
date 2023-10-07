@@ -9,14 +9,19 @@ export const metadata: Metadata = {
   description: 'Admin Dashboard',
 }
 
+import { ClerkProvider } from '@clerk/nextjs'
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <ClerkProvider>
+      <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
+    </ClerkProvider>
+    
   )
 }
